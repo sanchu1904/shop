@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url(https://files.123freevectors.com/wp-content/original/118533-abstract-red-and-white-blur-lights-background-image.jpg) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    width: 1500px;
+    height: 1500px;
+    text-align: center;
+    color: white;
+}
+
+.login-box h2 {
+    margin-bottom: 300px;
+    font-size: 7rem;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.input-box input {
+    width: 100%;
+    justify-content:space-between;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 5rem;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    color: white;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    bottom: 35px;
+    font-size: 2rem;
+    color: #ffcccb;
+}
+
+button {
+    background: linear-gradient(145deg, #ff4d4d, #cc0000);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(255,77,77,0.5);
+}

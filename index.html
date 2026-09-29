@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .search-bar {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            padding: 15px 20px;
+            font-size: 3rem;
+            border-radius: 30px;
+            border: none;
+            width: 1500px;
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.85);
+            transition: 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            background: white;
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .search-bar button {
+            background: linear-gradient(145deg, #ff4d4d, #b30000);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+        }
+
+        .search-bar button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255,0,0,0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 style="background-image: url(https://files.123freevectors.com/wp-content/original/118533-abstract-red-and-white-blur-lights-background-image.jpg);">
+            FOOD delivery (on minutes)
+        </h1>
+
+        <!-- Search bar -->
+        <form class="search-bar" onsubmit="return searchFood()">
+            <input type="text" id="searchInput" placeholder="Search food...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="container">
+            <div class="image-box">
+                <img src="chicken.avif" alt="Product 1">
+                <span class="caption">Chicken Biriyani</span>
+            </div>
+            <div class="image-box">
+                <img src="chicken-65-.jpg" alt="Product 2">
+                <span class="caption">Chicken Chilli</span>
+            </div>
+            <div class="image-box">
+                <img src="beefb.jpg" alt="Product 3">
+                <span class="caption">Beef Biriyani</span>
+            </div>
+            <div class="image-box">
+                <img src="beef-chilli.jpeg" alt="Product 4">
+                <span class="caption">Beef Chilli</span>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        function searchFood() {
+            let query = document.getElementById("searchInput").value;
+            if (query.trim() !== "") {
+                window.location.href = "search-results.html?item=" + encodeURIComponent(query);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
+
+
+
+

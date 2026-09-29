@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Food - Food Delivery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
+            background-image: url(https://files.123freevectors.com/wp-content/original/118533-abstract-red-and-white-blur-lights-background-image.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+
+        .order-container {
+            margin-top: 100px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .food-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: none;
+            width: 60px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(145deg, #ff4d4d, #b30000);
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <img id="foodImage" alt="Food Image">
+        <div class="food-name" id="foodName"></div>
+        <div class="price" id="foodPrice"></div>
+        <label>Quantity:</label>
+        <input type="number" id="quantity" value="1" min="1">
+        <br>
+        <button class="btn" onclick="placeOrder()">Order Now</button>
+    </div>
+
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let name = params.get("name");
+        let image = params.get("image");
+        let price = params.get("price");
+
+        document.getElementById("foodName").innerText = name;
+        document.getElementById("foodImage").src = image;
+        document.getElementById("foodPrice").innerText = "Price: ₹" + price;
+
+        function placeOrder() {
+            let qty = document.getElementById("quantity").value;
+            let total = qty * price;
+            alert(`Order placed for ${qty} x ${name}.\nTotal: ₹${total}`);
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
